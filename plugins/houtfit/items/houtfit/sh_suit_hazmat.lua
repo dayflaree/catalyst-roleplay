@@ -1,9 +1,9 @@
-ITEM.name = "Infestation Control Hazard Suit"
+ITEM.name = "Infestation Control Hazmat Suit"
 ITEM.description = "A hazmat suit that is made for Citizens to use."
 ITEM.category = "Clothing"
-ITEM.model = "models/mosi/fallout4/props/fortifications/woodencrate02.mdl"
+ITEM.model = "models/hazmat_crate/hazmat_crate_body.mdl"
 ITEM.width = 1
 ITEM.height = 1
-ITEM.replacement = "models/hlvr/characters/hazmat_worker/npc/hazmat_worker_citizen.mdl"
+ITEM.replacement = "models/hlalyx/workers_cmb/hazmat_worker/npc/hazmat_worker_citizen.mdl"
 ITEM.outfitCategory = "suit"
 ITEM.gasImmunity = true

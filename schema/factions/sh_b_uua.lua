@@ -1,5 +1,5 @@
-FACTION.name = "Universal Union Associate"
-FACTION.description = "A regular human citizen enslaved by the Universal Union. They are approved with loyal equipment and membership."
+FACTION.name = "Union Civil Service"
+FACTION.description = "A regular human citizen enslaved by the Combine. They are approved with loyal equipment and membership."
 FACTION.color = Color(70, 150, 170, 255)
 FACTION.isDefault = false
 

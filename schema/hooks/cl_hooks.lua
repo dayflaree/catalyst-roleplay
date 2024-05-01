@@ -183,8 +183,8 @@ function Schema:HUDPaint()
             sanityAlpha = (150 + math.sin(RealTime() * 5.2) * 100)
         end
         
-        ix.util.DrawIcon("interlock/icons/512/stamina.png", ColorAlpha(staminaColor, staminaAlpha), 5, 5, 25, 25)
-        ix.util.DrawIcon("interlock/icons/512/health.png", ColorAlpha(sanityColor, sanityAlpha), 5, 35, 25, 25)
+        ix.util.DrawIcon("catalyst/halflife2/icons/running.png", ColorAlpha(staminaColor, staminaAlpha), 5, 5, 35, 35)
+        ix.util.DrawIcon("catalyst/halflife2/icons/cardiogram.png", ColorAlpha(sanityColor, sanityAlpha), 5, 45, 35, 35)
     end
 
     local weapon = ply:GetActiveWeapon()

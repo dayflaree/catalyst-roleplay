@@ -155,13 +155,13 @@ function PANEL:Init()
 	subTitleLabel:SetPos(100, ScrH() / 2.5 + titleLabel:GetTall())
 
 	-- image panel, top right
-	local imagePanel = self:Add("Panel")
-	imagePanel:SetSize(ScrW() / 10, ScrW() / 10)
-	imagePanel:SetPos(ScrW() - imagePanel:GetWide(), 0)
-	imagePanel:SetVisible(true)
-	imagePanel.Paint = function(self, w, h)
-		ix.util.DrawIcon("interlock/interlock_color.png", color_white, 0, 0, w, h)
-	end
+	--local imagePanel = self:Add("Panel")
+	--imagePanel:SetSize(ScrW() / 10, ScrW() / 10)
+	--imagePanel:SetPos(ScrW() - imagePanel:GetWide(), 0)
+	--imagePanel:SetVisible(true)
+	--imagePanel.Paint = function(self, w, h)
+	--	ix.util.DrawIcon("", color_white, 0, 0, w, h)
+	--end
 
 	-- button panel list
 	self.buttonList = self:Add("Panel")
@@ -516,7 +516,7 @@ function PANEL:Paint(width, height)
 	if (!ix.option.Get("cheapBlur", false)) then
 		surface.SetDrawColor(0, 0, 0, 150)
 		surface.DrawTexturedRect(0, 0, width, height)
-		ix.util.DrawBlur(self, Lerp((self.currentAlpha - 200) / 255, 0, 10))
+		ix.util.DrawBlur(self, Lerp((self.currentAlpha - 255) / 255, 0, 10))
 	end
 end
 

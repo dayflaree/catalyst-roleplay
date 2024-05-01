@@ -2,9 +2,9 @@
     Schema Information
 ---------------------------------------------------------------------------]]--
 
-Schema.name = "Catalyst: Serious Roleplay"
+Schema.name = "Catalyst\nSerious Roleplay"
 Schema.description = ""
-Schema.author = "RVVZ & Billy"
+Schema.author = "RVVZ"
 Schema.developers = "RVVZ & eon"
 Schema.adminTeam = {
     "",
@@ -87,7 +87,7 @@ ix.config.SetDefault("gruntDamageScale", true)
 ix.config.SetDefault("generalDamageScale", true)
 ix.config.SetDefault("font", "Russell Square")
 ix.config.SetDefault("genericFont", "Roboto")
-ix.config.SetDefault("music", "interlock/music/halflife/alyx/misc/mainmenu.ogg")
+ix.config.SetDefault("music", "catalyst/music/redux/ambient/rtbr_passage_of_time.mp3")
 
 ix.config.SetDefault("communityText", "Discord")
 ix.config.SetDefault("communityURL", "https://discord.gg/Bt5e3zmATx")
