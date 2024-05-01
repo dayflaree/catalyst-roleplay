@@ -34,6 +34,7 @@ function PANEL:Init()
     local back = controlList:Add("ixMenuButton")
     back:Dock(BOTTOM)
     back:SetText("return")
+    back:SetFont("InterlockFont40-Light")
     back:SizeToContents()
     back.DoClick = function()
         self:SlideDown()
@@ -73,7 +74,7 @@ end
 
 function PANEL:Paint(width, height)
     surface.SetDrawColor(150, 150, 150, 255)
-    surface.SetMaterial(ix.util.GetMaterial("interlock/images/alyx/4.jpg"))
+    surface.SetMaterial(ix.util.GetMaterial("catalyst/catalyst_banner.png"))
     surface.DrawTexturedRect(0, 0, width, height)
 
     ix.util.DrawBlur(self, 3)

@@ -21,38 +21,6 @@ Schema.changelogs = {
     }
 }
 
-if ( vrmod and CLIENT ) then
-    vrmod.AddInGameMenuItem("Helix Menu", 1, 1, function()
-        if ( IsValid(LocalPlayer()) and LocalPlayer():Alive() and LocalPlayer():GetCharacter() ) then
-            if ( IsValid(ix.vrmenu) ) then
-                ix.vrmenu:Remove()
-                ix.vrmenu = nil
-            else
-                ix.vrmenu = vgui.Create("ixMenu")
-            end
-        end
-    end)
-
-    vrmod.AddInGameMenuItem("Helix Chat", 2, 2, function()
-        if ( IsValid(LocalPlayer()) and LocalPlayer():Alive() and LocalPlayer():GetCharacter() ) then
-            if ( IsValid(ix.vrchat) ) then
-                ix.vrchat:Remove()
-                ix.vrchat = nil
-            else
-                ix.vrchat = vgui.Create("ixChatbox")
-                ix.vrchat:SetupTabs(util.JSONToTable(ix.option.Get("chatTabs", "")))
-                ix.vrchat:SetupPosition(util.JSONToTable(ix.option.Get("chatPosition", "")))
-            end
-        end
-    end)
-
-    hook.Add("VRMod_Input", "ixVRModInput", function(ActionName, State)
-        if ( vrmod.IsPlayerInVR(LocalPlayer()) ) and ( tostring(ActionName) == "boolean_secondaryfire" ) then
-            gui.InternalMousePressed(MOUSE_RIGHT)
-        end
-    end)
-end
-
 --[[---------------------------------------------------------------------------
     Schema Config
 ---------------------------------------------------------------------------]]--
@@ -87,9 +55,8 @@ ix.config.SetDefault("gruntDamageScale", true)
 ix.config.SetDefault("generalDamageScale", true)
 ix.config.SetDefault("font", "Russell Square")
 ix.config.SetDefault("genericFont", "Roboto")
-ix.config.SetDefault("music", "catalyst/music/redux/ambient/rtbr_passage_of_time.mp3")
-
-ix.config.SetDefault("communityText", "Discord")
+ix.config.SetDefault("music", "catalyst/music/hla/chapter 1/valve - coetaneous entanglement.mp3")
+ix.config.SetDefault("communityText", "Community")
 ix.config.SetDefault("communityURL", "https://discord.gg/Bt5e3zmATx")
 
 ix.act.Register("Knock", "metrocop", {
@@ -111,9 +78,6 @@ for i = 10, 100 do
 end
 
 Schema.heights = {
-    ["4'0"] = 0.80,
-    ["4'2"] = 0.82,
-    ["4'4"] = 0.84,
     ["4'6"] = 0.86,
     ["4'8"] = 0.88,
     ["4'10"] = 0.90,
@@ -128,10 +92,6 @@ Schema.heights = {
     ["6'0"] = 1.08,
     ["6'2"] = 1.10,
     ["6'4"] = 1.12,
-    ["6'6"] = 1.14,
-    ["6'8"] = 1.16,
-    ["6'10"] = 1.18,
-    ["6'12"] = 1.20,
 }
 
 ALWAYS_RAISED["swep_construction_kit"] = true
@@ -246,4 +206,40 @@ for i=1, #gunshots do
             sound = "^weapons/rust_distant/"..snd..".mp3"
         }
     )	
+end
+
+--[[---------------------------------------------------------------------------
+    Schema VRMod
+---------------------------------------------------------------------------]]--
+
+if ( vrmod and CLIENT ) then
+    vrmod.AddInGameMenuItem("Helix Menu", 1, 1, function()
+        if ( IsValid(LocalPlayer()) and LocalPlayer():Alive() and LocalPlayer():GetCharacter() ) then
+            if ( IsValid(ix.vrmenu) ) then
+                ix.vrmenu:Remove()
+                ix.vrmenu = nil
+            else
+                ix.vrmenu = vgui.Create("ixMenu")
+            end
+        end
+    end)
+
+    vrmod.AddInGameMenuItem("Helix Chat", 2, 2, function()
+        if ( IsValid(LocalPlayer()) and LocalPlayer():Alive() and LocalPlayer():GetCharacter() ) then
+            if ( IsValid(ix.vrchat) ) then
+                ix.vrchat:Remove()
+                ix.vrchat = nil
+            else
+                ix.vrchat = vgui.Create("ixChatbox")
+                ix.vrchat:SetupTabs(util.JSONToTable(ix.option.Get("chatTabs", "")))
+                ix.vrchat:SetupPosition(util.JSONToTable(ix.option.Get("chatPosition", "")))
+            end
+        end
+    end)
+
+    hook.Add("VRMod_Input", "ixVRModInput", function(ActionName, State)
+        if ( vrmod.IsPlayerInVR(LocalPlayer()) ) and ( tostring(ActionName) == "boolean_secondaryfire" ) then
+            gui.InternalMousePressed(MOUSE_RIGHT)
+        end
+    end)
 end
