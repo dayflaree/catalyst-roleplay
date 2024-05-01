@@ -1,0 +1,7 @@
+"catalyst-roleplay"
+{
+    "base" "helix"
+    "title" "Catalyst: Serious ROleplay"
+    "author" "RVVZ & Billy"
+    "menusystem" "1"
+}
