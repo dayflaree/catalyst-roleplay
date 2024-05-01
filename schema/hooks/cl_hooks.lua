@@ -3,11 +3,11 @@
 ---------------------------------------------------------------------------]]--
 
 function Schema:PopulateHelpMenu(tabs)
-    tabs["uu guide"] = function(container)
-        local uuguide = container:Add("DHTML")
-        uuguide:SetTall(ScrH())
-        uuguide:Dock(FILL)
-        uuguide:OpenURL("https://docs.google.com/document/d/1od3HK2u0x0Xx4rd9ycCEbY9DhcCP0-5es9DbteXt54w/edit")
+    tabs["documentation"] = function(container)
+        local documentation = container:Add("DHTML")
+        documentation:SetTall(ScrH())
+        documentation:Dock(FILL)
+        documentation:OpenURL("")
     end
     tabs["voices"] = function(container)
         local classes = {}

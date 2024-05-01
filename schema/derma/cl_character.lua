@@ -196,9 +196,38 @@ function PANEL:Init()
 
     -- create character button
     local createButton = self.mainButtonList:Add("ixMenuButton")
-    createButton:SetText("create story")
+    createButton:SetText("")
     createButton:SetFont("InterlockFont40-Light")
-    createButton:SizeToContents()
+    local material = ix.util.GetMaterial("catalyst/ui/create_story.png")
+    if material then
+        createButton.Paint = function(self, w, h)
+            -- Draw the material to cover the entire button area
+            surface.SetDrawColor(255, 255, 255, 255)
+            surface.SetMaterial(material)
+        
+            -- Calculate the aspect ratio of the image
+            local matWidth = material:Width()
+            local matHeight = material:Height()
+            local aspectRatio = matWidth / matHeight
+        
+            -- Calculate scaling factors
+            local scaleX = w / matWidth
+            local scaleY = h / matHeight
+        
+            -- Determine how to scale the image to cover the button
+            if scaleX > scaleY then
+                -- Scale by height
+                local drawWidth = matWidth * scaleY
+                surface.DrawTexturedRect((w - drawWidth) / 5, 0, drawWidth, h)
+            else
+                -- Scale by width
+                local drawHeight = matHeight * scaleX
+                surface.DrawTexturedRect(0, (h - drawHeight) / 5, w, drawHeight)
+            end
+        end
+    
+        createButton:SizeToContents()
+    end
     createButton.DoClick = function()
         local maximum = hook.Run("GetMaxPlayerCharacter", LocalPlayer()) or ix.config.Get("maxCharacters", 5)
         -- don't allow creation if we've hit the character limit
@@ -214,9 +243,38 @@ function PANEL:Init()
 
     -- load character button
     self.loadButton = self.mainButtonList:Add("ixMenuButton")
-    self.loadButton:SetText("continue story")
+    self.loadButton:SetText("")
     self.loadButton:SetFont("InterlockFont40-Light")
-    self.loadButton:SizeToContents()
+    local material = ix.util.GetMaterial("catalyst/ui/continue_story.png")
+    if material then
+        self.loadButton.Paint = function(self, w, h)
+            -- Draw the material to cover the entire button area
+            surface.SetDrawColor(255, 255, 255, 255)
+            surface.SetMaterial(material)
+        
+            -- Calculate the aspect ratio of the image
+            local matWidth = material:Width()
+            local matHeight = material:Height()
+            local aspectRatio = matWidth / matHeight
+        
+            -- Calculate scaling factors
+            local scaleX = w / matWidth
+            local scaleY = h / matHeight
+        
+            -- Determine how to scale the image to cover the button
+            if scaleX > scaleY then
+                -- Scale by height
+                local drawWidth = matWidth * scaleY
+                surface.DrawTexturedRect((w - drawWidth) / 5, 0, drawWidth, h)
+            else
+                -- Scale by width
+                local drawHeight = matHeight * scaleX
+                surface.DrawTexturedRect(0, (h - drawHeight) / 5, w, drawHeight)
+            end
+        end
+    
+        self.loadButton:SizeToContents()
+    end
     self.loadButton.DoClick = function()
         self:Dim()
         parent.loadCharacterPanel:SlideUp()
@@ -236,18 +294,76 @@ function PANEL:Init()
         end
 
         local extraButton = self.mainButtonList:Add("ixMenuButton")
-        extraButton:SetText(extraText, true)
+        extraButton:SetText("")
         extraButton:SetFont("InterlockFont40-Light")
-        extraButton:SizeToContents()
+        local material = ix.util.GetMaterial("catalyst/ui/community.png")
+        if material then
+            extraButton.Paint = function(self, w, h)
+                -- Draw the material to cover the entire button area
+                surface.SetDrawColor(255, 255, 255, 255)
+                surface.SetMaterial(material)
+            
+                -- Calculate the aspect ratio of the image
+                local matWidth = material:Width()
+                local matHeight = material:Height()
+                local aspectRatio = matWidth / matHeight
+            
+                -- Calculate scaling factors
+                local scaleX = w / matWidth
+                local scaleY = h / matHeight
+            
+                -- Determine how to scale the image to cover the button
+                if scaleX > scaleY then
+                    -- Scale by height
+                    local drawWidth = matWidth * scaleY
+                    surface.DrawTexturedRect((w - drawWidth) / 5, 0, drawWidth, h)
+                else
+                    -- Scale by width
+                    local drawHeight = matHeight * scaleX
+                    surface.DrawTexturedRect(0, (h - drawHeight) / 5, w, drawHeight)
+                end
+            end
+        
+            extraButton:SizeToContents()
+        end
         extraButton.DoClick = function()
             gui.OpenURL(extraURL)
         end
     end
 
     local changelogButton = self.mainButtonList:Add("ixMenuButton")
-    changelogButton:SetText("changelogs")
+    changelogButton:SetText("")
     changelogButton:SetFont("InterlockFont40-Light")
-    changelogButton:SizeToContents()
+    local material = ix.util.GetMaterial("catalyst/ui/changelog.png")
+    if material then
+        changelogButton.Paint = function(self, w, h)
+            -- Draw the material to cover the entire button area
+            surface.SetDrawColor(255, 255, 255, 255)
+            surface.SetMaterial(material)
+        
+            -- Calculate the aspect ratio of the image
+            local matWidth = material:Width()
+            local matHeight = material:Height()
+            local aspectRatio = matWidth / matHeight
+        
+            -- Calculate scaling factors
+            local scaleX = w / matWidth
+            local scaleY = h / matHeight
+        
+            -- Determine how to scale the image to cover the button
+            if scaleX > scaleY then
+                -- Scale by height
+                local drawWidth = matWidth * scaleY
+                surface.DrawTexturedRect((w - drawWidth) / 5, 0, drawWidth, h)
+            else
+                -- Scale by width
+                local drawHeight = matHeight * scaleX
+                surface.DrawTexturedRect(0, (h - drawHeight) / 5, w, drawHeight)
+            end
+        end
+    
+        changelogButton:SizeToContents()
+    end
     changelogButton.DoClick = function()
         self:Dim()
         parent.changelogs:SlideUp()
@@ -272,9 +388,39 @@ function PANEL:UpdateReturnButton(bValue)
         self.bUsingCharacter = bValue
     end
 
-    self.returnButton:SetText(self.bUsingCharacter and "return" or "leave")
+    --self.returnButton:SetText(self.bUsingCharacter and "return" or "leave")
+    self.returnButton:SetText("")
     self.returnButton:SetFont("InterlockFont40-Light")
-    self.returnButton:SizeToContents()
+    local material = ix.util.GetMaterial("catalyst/ui/return.png")
+    if material then
+        self.returnButton.Paint = function(self, w, h)
+            -- Draw the material to cover the entire button area
+            surface.SetDrawColor(255, 255, 255, 255)
+            surface.SetMaterial(material)
+        
+            -- Calculate the aspect ratio of the image
+            local matWidth = material:Width()
+            local matHeight = material:Height()
+            local aspectRatio = matWidth / matHeight
+        
+            -- Calculate scaling factors
+            local scaleX = w / matWidth
+            local scaleY = h / matHeight
+        
+            -- Determine how to scale the image to cover the button
+            if scaleX > scaleY then
+                -- Scale by height
+                local drawWidth = matWidth * scaleY
+                surface.DrawTexturedRect((w - drawWidth) / 5, 0, drawWidth, h)
+            else
+                -- Scale by width
+                local drawHeight = matHeight * scaleX
+                surface.DrawTexturedRect(0, (h - drawHeight) / 5, w, drawHeight)
+            end
+        end
+    
+        self.returnButton:SizeToContents()
+    end
 end
 
 function PANEL:OnDim()
@@ -495,7 +641,7 @@ function PANEL:Paint(width, height)
 
     surface.SetDrawColor(color_white)
     surface.SetMaterial(ix.util.GetMaterial("catalyst/ui/catalyst_title.png"))
-    surface.DrawTexturedRect(150, 270, 470, 125)
+    surface.DrawTexturedRect(150, 270, 480, 125)
 end
 
 function PANEL:PaintOver(width, height)
