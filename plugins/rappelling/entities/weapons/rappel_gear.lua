@@ -9,7 +9,7 @@ if (CLIENT) then
     SWEP.DrawCrosshair = false
 end
 
-SWEP.Category = "IX:HLA RP"
+SWEP.Category = "Catalyst (Misc)"
 SWEP.Author = "wowm0d"
 SWEP.Instructions = "Primary Fire: Attach/Cut Rope"
 

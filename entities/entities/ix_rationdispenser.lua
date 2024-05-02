@@ -6,7 +6,7 @@ ENT.PrintName        = "Ration Machine"
 ENT.Author            = "Riggs.mackay"
 ENT.Purpose            = "A Machine which dispenses rations, each ration you have to wait to gain another."
 ENT.Instructions    = "Press E"
-ENT.Category         = "IX:HLA RP"
+ENT.Category         = "Catalyst (Combine)"
 
 ENT.AutomaticFrameAdvance = true
 ENT.Spawnable = true

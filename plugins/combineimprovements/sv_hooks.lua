@@ -53,53 +53,6 @@ function PLUGIN:InitializedSchema()
     end
 end
 
-function PLUGIN:PlayerFootstep(ply, pos, foot, sound)
-    if ( ply:GetModel():find("combine_heavy_trooper") ) then
-        ply:EmitSound("interlock/player/combine/footsteps/charger/foley_step_0"..math.random(1,9)..".ogg", 60, math.random(90, 110), 0.7)
-        ply:EmitSound("interlock/player/combine/footsteps/charger/step_layer_bass_0"..math.random(1,5)..".ogg", 90, math.random(90, 110), 0.8)
-        ply:EmitSound("interlock/player/combine/footsteps/charger/step_layer_clink_0"..math.random(1,5)..".ogg", 80, math.random(90, 110), 0.6)
-        ply:EmitSound(sound, 70, math.random(90, 110), 0.5)
-
-        util.ScreenShake(pos, 1, 1, 1, 512)
-
-        return true
-    end
-    
-    local newSound = ""
-
-    if ( ply:IsCombine() ) then
-        if ( ply:GetModel():find("police") ) then
-            newSound = "interlock/player/combine/footsteps/metrocop/foley_step_"..Schema:ZeroNumber(math.random(1,9), 2)..".ogg"
-        else
-            newSound = "interlock/player/combine/footsteps/combine/foley_step_"..Schema:ZeroNumber(math.random(1,9), 2)..".ogg"
-        end
-    end
-
-    if ( sound:find("dirt") or sound:find("grass") or sound:find("mud") or sound:find("sand") or sound:find("snow") ) then
-        sound = "interlock/player/combine/footsteps/common/combine_dirt_step_"..Schema:ZeroNumber(math.random(1,10), 2)..".ogg"
-    elseif ( sound:find("gravel") ) then
-        sound = "interlock/player/combine/footsteps/common/combine_gravel_step_"..Schema:ZeroNumber(math.random(1,12), 2)..".ogg"
-    elseif ( sound:find("chainlink") or sound:find("metalgrate") ) then
-        sound = "interlock/player/combine/footsteps/common/combine_metal_walkway_step_"..Schema:ZeroNumber(math.random(1,10), 2)..".ogg"
-    elseif ( sound:find("duct") or sound:find("metal") or sound:find("ladder") ) then
-        sound = "interlock/player/combine/footsteps/common/combine_metal_solid_step_"..Schema:ZeroNumber(math.random(1,10), 2)..".ogg"
-    elseif ( sound:find("wood") ) then
-        sound = "interlock/player/combine/footsteps/common/combine_wood_step_"..Schema:ZeroNumber(math.random(1,8), 2)..".ogg"
-    else
-        sound = "interlock/player/combine/footsteps/common/combine_concrete_step_"..Schema:ZeroNumber(math.random(1,9), 2)..".ogg"
-    end
-
-    if not ( ply:WaterLevel() == 0 ) then
-        newSound = "ambient/water/water_splash"..math.random(1,3)..".wav"
-        sound = "ambient/water/rain_drip"..math.random(1,4)..".wav"
-    end
-
-    ply:EmitSound(newSound, 70, math.random(90, 110), 0.5)
-    ply:EmitSound(sound, 80, math.random(90, 110), 0.5)
-
-    return true
-end
-
 function PLUGIN:DoPlayerDeath(ply, attacker, dmg)
     local location = ply:GetArea()
     if ( location == "" ) then

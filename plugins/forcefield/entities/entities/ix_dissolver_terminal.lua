@@ -1,6 +1,6 @@
 ENT.Type = "anim"
 ENT.PrintName = "Dissolver Terminal"
-ENT.Category = "IX:HLA RP"
+ENT.Category = "Catalyst (Combine)"
 ENT.Spawnable = true
 ENT.AdminOnly = true
 ENT.RenderGroup = RENDERGROUP_TRANSLUCENT

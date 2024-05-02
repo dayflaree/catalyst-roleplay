@@ -4,7 +4,7 @@ ENT.Base = "base_gmodentity"
 ENT.Type = "anim"
 ENT.PrintName = "Nail"
 ENT.Author = "Riggs.mackay"
-ENT.Category = "IX:HLA RP"
+ENT.Category = "Catalyst (Citizen)"
 
 ENT.AutomaticFrameAdvance = true
 ENT.Spawnable = false

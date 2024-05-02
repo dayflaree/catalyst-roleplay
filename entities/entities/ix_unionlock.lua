@@ -3,7 +3,7 @@ AddCSLuaFile()
 
 ENT.Type = "anim"
 ENT.PrintName = "Union Lock"
-ENT.Category = "IX:HLA RP"
+ENT.Category = "Catalyst (Combine)"
 ENT.Spawnable = true
 ENT.AdminOnly = true
 ENT.PhysgunDisable = true
@@ -80,7 +80,7 @@ if ( SERVER ) then
     end
 
     function ENT:Initialize()
-        self:SetModel("models/hla/ap_lock.mdl")
+        self:SetModel("models/hls/combine_lock01.mdl")
         self:SetSolid(SOLID_VPHYSICS)
         self:PhysicsInit(SOLID_VPHYSICS)
         self:SetCollisionGroup(COLLISION_GROUP_WEAPON)

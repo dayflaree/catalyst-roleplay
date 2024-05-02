@@ -4,7 +4,7 @@ ENT.Base = "base_gmodentity"
 ENT.Type = "anim"
 ENT.PrintName = "Mining Rock"
 ENT.Author = "Riggs.mackay"
-ENT.Category = "IX:HLA RP (Mining)"
+ENT.Category = "Catalyst (Mining)"
 
 ENT.AutomaticFrameAdvance = true
 ENT.Spawnable = true

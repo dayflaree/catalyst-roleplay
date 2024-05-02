@@ -10,7 +10,7 @@ if ( CLIENT ) then
 end
 
 SWEP.HoldType = "fist"
-SWEP.Category = "IX:HLA RP"
+SWEP.Category = "Catalyst (Misc)"
 
 SWEP.Spawnable = true
 SWEP.AdminSpawnable = true

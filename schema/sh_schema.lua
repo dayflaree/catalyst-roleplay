@@ -37,6 +37,15 @@ ix.attributes.list["end"] = nil
 ix.attributes.list["stm"] = nil
 ix.attributes.list["str"] = nil
 
+ix.config.SetDefault("color", Color(200, 50, 255))
+ix.config.SetDefault("gruntDamageScale", true)
+ix.config.SetDefault("generalDamageScale", true)
+ix.config.SetDefault("font", "Russell Square")
+ix.config.SetDefault("genericFont", "Roboto")
+ix.config.SetDefault("music", "catalyst/music/hla/chapter 1/valve - coetaneous entanglement.mp3")
+ix.config.SetDefault("communityText", "Community")
+ix.config.SetDefault("communityURL", "https://discord.gg/Bt5e3zmATx")
+
 ix.config.Add("rationInterval", 300, "How long a person needs to wait in seconds to get their next ration", nil, {
     data = {min = 0, max = 86400},
     category = "economy"
@@ -49,15 +58,6 @@ ix.config.Add("gruntDamageScale", true, "Enable the Infestation Respone Team Dam
 ix.config.Add("generalDamageScale", true, "Enable the general Damage Multiplier.", nil, {
     category = "damage"
 })
-
-ix.config.SetDefault("color", Color(200, 50, 255))
-ix.config.SetDefault("gruntDamageScale", true)
-ix.config.SetDefault("generalDamageScale", true)
-ix.config.SetDefault("font", "Russell Square")
-ix.config.SetDefault("genericFont", "Roboto")
-ix.config.SetDefault("music", "catalyst/music/hla/chapter 1/valve - coetaneous entanglement.mp3")
-ix.config.SetDefault("communityText", "Community")
-ix.config.SetDefault("communityURL", "https://discord.gg/Bt5e3zmATx")
 
 ix.act.Register("Knock", "metrocop", {
     sequence = "adoorknock",
@@ -113,7 +113,7 @@ ix.util.IncludeDir("commands")
 function Schema:IllegalRow(tooltip)
     local warning = tooltip:AddRow("warning")
     warning:SetBackgroundColor(derma.GetColor("Error", tooltip))
-    warning:SetText("// THIS ITEM IS ILLEGAL TO CARRY AROUND, FOUND WITH THIS ITEM CAN CAUSE VIOLATIONS BY UU AUTHORITIES //")
+    warning:SetText("// THIS ITEM IS ILLEGAL TO CARRY AROUND, FOUND WITH THIS ITEM CAN CAUSE VIOLATIONS BY COMBINE AUTHORITIES //")
     warning:SetFont("BudgetLabel")
     warning:SetExpensiveShadow(0.5)
     warning:SizeToContents()
@@ -164,52 +164,8 @@ function string.Count(str, char)
     return n
 end
 
-
-local gunshots = file.Find( "sound/weapons/rust_distant/*", "GAME" )
-local mp3s = file.Find( "sound/weapons/rust_mp3/*.mp3", "GAME" )
-local wavs = file.Find( "sound/weapons/rust/*.wav", "GAME" )
-
-for i=1, #mp3s do
-    local snd = string.sub(mp3s[i],1,-5)
-    sound.Add(
-        {
-            name = "darky_rust."..snd,
-            channel = CHAN_STATIC,
-            volume = 1.0,
-            soundlevel = 180,
-            sound = "weapons/rust_mp3/"..snd..".mp3"
-        }
-    )	
-end
-
-for i=1, #wavs do
-    local snd = string.sub(wavs[i],1,-5)
-    sound.Add(
-        {
-            name = "darky_rust."..snd,
-            channel = CHAN_STATIC,
-            volume = 1.0,
-            soundlevel = 180,
-            sound = "weapons/rust/"..snd..".wav"
-        }
-    )	
-end
-
-for i=1, #gunshots do
-    local snd = string.sub(gunshots[i],1,-5)
-    sound.Add(
-        {
-            name = "darky_rust."..snd,
-            channel = CHAN_STATIC,
-            volume = 15.0,
-            soundlevel = 511,
-            sound = "^weapons/rust_distant/"..snd..".mp3"
-        }
-    )	
-end
-
 --[[---------------------------------------------------------------------------
-    Schema VRMod
+    Virtual Reality Support
 ---------------------------------------------------------------------------]]--
 
 if ( vrmod and CLIENT ) then

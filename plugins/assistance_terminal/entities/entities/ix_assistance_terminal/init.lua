@@ -5,7 +5,7 @@ AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
 
 function ENT:Initialize( )
-    self:SetModel( "models/hla_combine_props/combine_monitor_medium.mdl" )
+    self:SetModel( "models/hls/alyxports/monitor_medium.mdl" )
     self:SetMoveType( MOVETYPE_VPHYSICS )
     self:PhysicsInit( SOLID_VPHYSICS )
     self:SetUseType( SIMPLE_USE )

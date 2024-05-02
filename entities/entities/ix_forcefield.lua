@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 ENT.Type = "anim"
 ENT.PrintName = "Forcefield"
-ENT.Category = "IX:HLA RP"
+ENT.Category = "Catalyst (Combine)"
 ENT.Spawnable = true
 ENT.AdminOnly = true
 ENT.RenderGroup = RENDERGROUP_BOTH
@@ -36,7 +36,7 @@ if (SERVER) then
     end
 
     function ENT:Initialize()
-        self:SetModel("models/willardnetworks/props/forcefield_left.mdl")
+        self:SetModel("models/hls/alyxports/combine_fence01b.mdl")
         self:SetSolid(SOLID_VPHYSICS)
         self:SetUseType(SIMPLE_USE)
         self:PhysicsInit(SOLID_VPHYSICS)
@@ -51,7 +51,7 @@ if (SERVER) then
         angles:RotateAroundAxis(angles:Up(), 90)
 
         self.dummy = ents.Create("prop_physics")
-        self.dummy:SetModel("models/willardnetworks/props/forcefield_right.mdl")
+        self.dummy:SetModel("models/hls/alyxports/combine_fence01a.mdl")
         self.dummy:SetPos(trace.HitPos)
         self.dummy:SetAngles(self:GetAngles())
         self.dummy:Spawn()

@@ -46,7 +46,7 @@ SWEP.UseHands = true
 SWEP.KnockViewPunchAngle = Angle(-1.3, 1.8, 0)
 
 SWEP.FireWhenLowered = true
-SWEP.HoldType = "fist"
+SWEP.HoldType = "fists"
 
 SWEP.holdDistance = 64
 SWEP.maxHoldDistance = 96 -- how far away the held object is allowed to travel before forcefully dropping

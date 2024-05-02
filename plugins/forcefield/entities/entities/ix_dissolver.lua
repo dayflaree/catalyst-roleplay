@@ -1,6 +1,6 @@
 ENT.Type = "anim"
 ENT.PrintName = "Dissolver"
-ENT.Category = "IX:HLA RP"
+ENT.Category = "Catalyst (Combine)"
 ENT.Spawnable = true
 ENT.AdminOnly = true
 ENT.RenderGroup = RENDERGROUP_BOTH
@@ -14,7 +14,7 @@ end
 
 if ( SERVER ) then
     function ENT:Initialize()
-        self:SetModel("models/willardnetworks/props/forcefield_left.mdl")
+        self:SetModel("models/hls/alyxports/combine_fence01b.mdl")
         self:DrawShadow(false)
         self:SetSolid(SOLID_VPHYSICS)
         self:SetUseType(SIMPLE_USE)
@@ -31,7 +31,7 @@ if ( SERVER ) then
         angles:RotateAroundAxis(angles:Up(), 90)
 
         self.dummy = ents.Create("prop_physics")
-        self.dummy:SetModel("models/willardnetworks/props/forcefield_right.mdl")
+        self.dummy:SetModel("models/hls/alyxports/combine_fence01a.mdl")
         self.dummy:SetPos(trace.HitPos)
         self.dummy:SetAngles(self:GetAngles())
         self.dummy:Spawn()
@@ -83,7 +83,7 @@ if ( SERVER ) then
         self:EmitSound("ambient/levels/citadel/zapper_warmup1.wav" )
         self:EmitSound("ambient/levels/citadel/weapon_disintegrate" .. math.random(1,4) .. ".wav")
         timer.Simple(0.1, function()
-            self:EmitSound("interlock/entities/scanner_access_denied.wav", 90)
+            --self:EmitSound("", 90)
             self:EmitSound("ambient/levels/citadel/weapon_disintegrate" .. math.random(1,4) .. ".wav")
             timer.Create( ragdoll:EntIndex() .. "_dissolveloop", 0.5, 2, function()
                 self:EmitSound("ambient/levels/citadel/weapon_disintegrate" .. math.random(1,4) .. ".wav")
@@ -196,8 +196,8 @@ if ( SERVER ) then
 
         if ( self:GetToggle() and self:GetNetVar("light") ) then
             if ( !self.Beep or CurTime() >= self.Beep ) then
-                self:EmitSound("interlock/entities/scanner_access_denied.wav")
-                self:GetDummy():EmitSound("interlock/entities/scanner_access_denied.wav")
+                self:EmitSound("catalyst/forcefield/forcefield_online.mp3")
+                self:GetDummy():EmitSound("catalyst/forcefield/forcefield_online.mp3")
                 self.Beep = CurTime() + 2
             end
 

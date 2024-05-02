@@ -2,52 +2,14 @@
     Clientside Functions
 ---------------------------------------------------------------------------]]--
 
-function notification.AddLegacy(text, _, __)
-    LocalPlayer():Notify(tostring(text))
-end
-
-function Schema:ShouldShowPlayerOnScoreboard(trg)
-    local ply = LocalPlayer()
-    
-    return true
-end 
-
-function ix.util.DrawIcon(material, color, x, y, w, h)
-    surface.SetDrawColor(color or color_white)
-    surface.SetMaterial(ix.util.GetMaterial(material))
-    surface.DrawTexturedRect(x, y, w, h)
-end
-
-net.Receive("ixPanicNotify", function(len, ply)
-    local callerName = net.ReadString()
-    ix.display.AddDisplay("panic button pressed from "..callerName, Color(255, 100, 0), true, "interlock/ui/hacking_puzzle_tripmine_failure_01.ogg")
-end)
-
-net.Receive("ixPlaySound", function()
-    LocalPlayer():EmitSound(tostring(net.ReadString()), tonumber(net.ReadUInt(7)) or 100)
-end)
-
-net.Receive("ixCreateVGUI", function()
-    vgui.Create(tostring(net.ReadString()))
-end)
-
-net.Receive("ixPlayerDeath", function()
-    if not ( LocalPlayer():IsCombine() ) then
-        if ( IsValid(ix.gui.deathScreen) ) then
-            ix.gui.deathScreen:Remove()
-        end
-
-        ix.gui.deathScreen = vgui.Create("ixDeathScreen")
-    end
-end)
-
+-- Sound & Font Configuration
 sound.Add({
     name = "Helix.Whoosh",
     channel = CHAN_STATIC,
     volume = 0.4,
     level = 80,
     pitch = 100,
-    sound = "interlock/ui/ui_appear_01.wav",
+    sound = "catalyst/hl2rp/ui/hla/appear.wav",
 })
 
 sound.Add({
@@ -56,7 +18,7 @@ sound.Add({
     volume = 0.5,
     level = 80,
     pitch = 100,
-    sound = "interlock/ui/ui_rollover_01.wav",
+    sound = "catalyst/hl2rp/ui/hla/rollover.wav",
 })
 
 sound.Add({
@@ -65,7 +27,7 @@ sound.Add({
     volume = 0.5,
     level = 80,
     pitch = 100,
-    sound = "interlock/ui/ui_select_01.wav",
+    sound = "catalyst/hl2rp/ui/hla/press.wav",
 })
 
 sound.Add({
@@ -74,7 +36,7 @@ sound.Add({
     volume = 0.35,
     level = 80,
     pitch = 100,
-    sound = "interlock/ui/ui_appear_03.wav",
+    sound = "catalyst/hl2rp/ui/hla/notify.wav",
 })
 
 surface.CreateFont("InterlockTitleFont", {
@@ -180,3 +142,42 @@ for value = 10, 170 do
         scanlines = 4,
     })
 end
+
+function notification.AddLegacy(text, _, __)
+    LocalPlayer():Notify(tostring(text))
+end
+
+function Schema:ShouldShowPlayerOnScoreboard(trg)
+    local ply = LocalPlayer()
+    
+    return true
+end 
+
+function ix.util.DrawIcon(material, color, x, y, w, h)
+    surface.SetDrawColor(color or color_white)
+    surface.SetMaterial(ix.util.GetMaterial(material))
+    surface.DrawTexturedRect(x, y, w, h)
+end
+
+net.Receive("ixPanicNotify", function(len, ply)
+    local callerName = net.ReadString()
+    ix.display.AddDisplay("panic button pressed from "..callerName, Color(255, 100, 0), true, "interlock/ui/hacking_puzzle_tripmine_failure_01.ogg")
+end)
+
+net.Receive("ixPlaySound", function()
+    LocalPlayer():EmitSound(tostring(net.ReadString()), tonumber(net.ReadUInt(7)) or 100)
+end)
+
+net.Receive("ixCreateVGUI", function()
+    vgui.Create(tostring(net.ReadString()))
+end)
+
+net.Receive("ixPlayerDeath", function()
+    if not ( LocalPlayer():IsCombine() ) then
+        if ( IsValid(ix.gui.deathScreen) ) then
+            ix.gui.deathScreen:Remove()
+        end
+
+        ix.gui.deathScreen = vgui.Create("ixDeathScreen")
+    end
+end)

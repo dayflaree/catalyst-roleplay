@@ -6,7 +6,7 @@ ENT.Base = "base_gmodentity"
 ENT.Type = "anim"
 ENT.PrintName = "Combine Light"
 ENT.Author = "Riggs.mackay"
-ENT.Category = "IX:HLA RP"
+ENT.Category = "Catalyst (Combine)"
 
 ENT.AutomaticFrameAdvance = true
 ENT.Spawnable = true

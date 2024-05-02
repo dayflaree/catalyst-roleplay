@@ -176,19 +176,26 @@ function PANEL:Init()
 	left:DockMargin(0, ScrH() * 0.05, 0, 0)
 	left.Paint = function(this, w, h)
 		if ( character ) then
-			draw.DrawText("ARMOR", "InterlockFont30", w / 2 - 400, 100, color_white, TEXT_ALIGN_LEFT)
-			draw.DrawText(LocalPlayer():Armor(), "InterlockFont80", w / 2 - 400, 130, Color(0, 100, 200), TEXT_ALIGN_LEFT)
+			draw.DrawText(string.upper(ix.currency.plural), "InterlockFont20", w / 2 + 400, 30, color_white, TEXT_ALIGN_RIGHT)
+			draw.DrawText(character:GetMoney()..ix.currency.symbol, "InterlockFont20-Light", w / 2 + 400, 50, color_white, TEXT_ALIGN_RIGHT)
+			
 			draw.DrawText("HEALTH", "InterlockFont30", w / 2 + 400, 100, color_white, TEXT_ALIGN_RIGHT)
 			draw.DrawText(LocalPlayer():Health(), "InterlockFont80", w / 2 + 400, 130, Color(0, 200, 150), TEXT_ALIGN_RIGHT)
 
-			draw.DrawText("HUNGER", "InterlockFont20", w / 2 - 400, 30, color_white, TEXT_ALIGN_LEFT)
+			draw.DrawText("HUNGER", "InterlockFont20", w / 2 - 400, 30, Color(255, 255, 145), TEXT_ALIGN_LEFT)
 			draw.DrawText(character:GetHunger(), "InterlockFont20-Light", w / 2 - 400, 50, color_white, TEXT_ALIGN_LEFT)
 
-			draw.DrawText(string.upper(ix.currency.plural), "InterlockFont20", w / 2 + 400, 30, color_white, TEXT_ALIGN_RIGHT)
-			draw.DrawText(character:GetMoney()..ix.currency.symbol, "InterlockFont20-Light", w / 2 + 400, 50, color_white, TEXT_ALIGN_RIGHT)
+			draw.DrawText("THIRST", "InterlockFont20", w / 2 - 400, 100, Color(127, 159, 200), TEXT_ALIGN_LEFT)
+			draw.DrawText(character:GetThirst(), "InterlockFont20-Light", w / 2 - 400, 120, color_white, TEXT_ALIGN_LEFT)
+			
+			draw.DrawText("FATIGUE", "InterlockFont20", w / 2 - 400, 170, Color(255, 127, 127), TEXT_ALIGN_LEFT)
+			draw.DrawText(character:GetSleep(), "InterlockFont20-Light", w / 2 - 400, 190, color_white, TEXT_ALIGN_LEFT)
 
-			draw.DrawText(string.upper("age"), "InterlockFont30", w / 2 - 400, 250, color_white, TEXT_ALIGN_LEFT)
-			draw.DrawText(character:GetAge(), "InterlockFont25-Light", w / 2 - 400, 280, color_white, TEXT_ALIGN_LEFT)
+			draw.DrawText("ARMOR", "InterlockFont30", w / 2 - 400, 250, color_white, TEXT_ALIGN_LEFT)
+			draw.DrawText(LocalPlayer():Armor(), "InterlockFont80", w / 2 - 400, 280, Color(0, 100, 200), TEXT_ALIGN_LEFT)
+
+			draw.DrawText(string.upper("AGE"), "InterlockFont30", w / 2 - 400, 380, color_white, TEXT_ALIGN_LEFT)
+			draw.DrawText(character:GetAge(), "InterlockFont25-Light", w / 2 - 400, 410, color_white, TEXT_ALIGN_LEFT)
 		end
 	end
 

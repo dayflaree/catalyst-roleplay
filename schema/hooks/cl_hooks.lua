@@ -1,7 +1,6 @@
 --[[---------------------------------------------------------------------------
     Clientside Hooks
 ---------------------------------------------------------------------------]]--
-
 function Schema:PopulateHelpMenu(tabs)
     tabs["documentation"] = function(container)
         local documentation = container:Add("DHTML")
@@ -344,7 +343,7 @@ function Schema:GetInjuredText(ply)
     elseif ( ply:Health() >= 15 ) then
         return "Seriously Bleeding Out", Color(200, 20, 0)
     elseif ( ply:Health() >= 10 ) then
-        return "Cardiac Arrest", Color(200, 10, 0)
+        return "Fucking Help Me", Color(200, 10, 0)
     elseif ( ply:Health() >= 5 ) then
         return "Visibly Dying", Color(200, 0, 0)
     elseif ( ply:Health() >= 1 ) then

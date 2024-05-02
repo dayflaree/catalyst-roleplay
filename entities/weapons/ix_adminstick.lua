@@ -4,7 +4,7 @@ SWEP.Base = "weapon_base"
 
 SWEP.PrintName = "Administration Stick"
 SWEP.Author = "Riggs.mackay"
-SWEP.Category = "IX:HLA RP"
+SWEP.Category = "Catalyst (Misc)"
 
 SWEP.Contact = ""
 SWEP.Purpose = ""

@@ -3,7 +3,7 @@ ENT.Base = "base_gmodentity"
 ENT.Type = "anim"
 ENT.PrintName = "Mining Furnace"
 ENT.Author = "Riggs.mackay"
-ENT.Category = "IX:HLA RP (Mining)"
+ENT.Category = "Catalyst (Mining)"
 --TODO: onUse panel(?) or something that grants the user the ability to choose the outcome of the smelting;
 --TODO: includes changing up smelting of metal ore -> metal ingot to wood -> charcoal and alike.
 

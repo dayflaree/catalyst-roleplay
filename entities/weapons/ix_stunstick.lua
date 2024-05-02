@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.Base = "ls_base_melee"
 
 SWEP.PrintName = "Stun Baton"
-SWEP.Category = "IX:HLA RP"
+SWEP.Category = "Catalyst (Melee)"
 SWEP.Spawnable = true
 SWEP.AdminOnly = true
 

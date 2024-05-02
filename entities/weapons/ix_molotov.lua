@@ -9,7 +9,7 @@ end)
 SWEP.Base = "ls_base_projectile"
 
 SWEP.PrintName = "Molotov Cocktail"
-SWEP.Category = "IX:HLA RP"
+SWEP.Category = "Catalyst (Throwables)"
 SWEP.Spawnable = true
 SWEP.AdminOnly = true
 SWEP.UseHands = false
