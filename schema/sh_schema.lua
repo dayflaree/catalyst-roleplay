@@ -96,6 +96,7 @@ Schema.heights = {
 
 ALWAYS_RAISED["swep_construction_kit"] = true
 ALWAYS_RAISED["ix_adminstick"] = true
+ALWAYS_RAISED["weapon_immolator"] = true
 
 --[[---------------------------------------------------------------------------
     Schema Includes

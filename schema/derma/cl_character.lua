@@ -641,7 +641,7 @@ function PANEL:Paint(width, height)
 
     surface.SetDrawColor(color_white)
     surface.SetMaterial(ix.util.GetMaterial("catalyst/ui/catalyst_title.png"))
-    surface.DrawTexturedRect(150, 270, 480, 125)
+    surface.DrawTexturedRect(150, 270, 500, 125)
 end
 
 function PANEL:PaintOver(width, height)

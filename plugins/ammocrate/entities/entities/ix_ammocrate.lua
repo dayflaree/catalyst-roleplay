@@ -4,7 +4,7 @@ ENT.Base = "base_gmodentity"
 ENT.Type = "anim"
 ENT.PrintName = "Ammo Crate"
 ENT.Author = "Skay"
-ENT.Category = "Catalyst (Combine)"
+ENT.Category = "Catalyst (Misc)"
 
 ENT.AutomaticFrameAdvance = true
 ENT.Spawnable = true

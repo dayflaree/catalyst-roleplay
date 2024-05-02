@@ -7,7 +7,7 @@ util.AddNetworkString("FPA_SetArmorPiece")
 -- -- -- --
 
 function ENT:Initialize()
-	self:SetModel("models/mosi/fallout4/furniture/workstations/powerarmorstation01.mdl")
+	self:SetModel("models/fallout_4/furniture/workstations/workbencharmor/workstationarmorb01.mdl")
 	self:PhysicsInit(SOLID_VPHYSICS)
 	self:SetMoveType(MOVETYPE_NONE)
 	self:SetSolid(SOLID_VPHYSICS)
