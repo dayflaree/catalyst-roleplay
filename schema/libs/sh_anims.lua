@@ -401,46 +401,26 @@ function ix.anim.GetModelClass(model)
     return class
 end
 
-ix.anim.SetModelClass("models/vortigaunt.mdl", "vortigaunt")
-ix.anim.SetModelClass("models/vortigaunt_blue.mdl", "vortigaunt")
-ix.anim.SetModelClass("models/vortigaunt_doctor.mdl", "vortigaunt")
-ix.anim.SetModelClass("models/vortigaunt_slave.mdl", "vortigaunt")
-
-ix.anim.SetModelClass("models/police.mdl", "metrocop")
-ix.anim.SetModelClass("models/hla/police.mdl", "metrocop")
-ix.anim.SetModelClass("models/hla/player_police.mdl", "player")
-ix.anim.SetModelClass("models/hla/male_police.mdl", "citizen_male")
-
-ix.anim.SetModelClass("models/hla/union_proselyte.mdl", "metrocop")
-ix.anim.SetModelClass("models/hla/player_union_proselyte.mdl", "player")
-ix.anim.SetModelClass("models/hla/male_union_proselyte.mdl", "citizen_male")
-
-ix.anim.SetModelClass("models/combine_soldiers_redone_playermodels/combine_elite_soldier_redone.mdl", "player")
-ix.anim.SetModelClass("models/combine_soldiers_redone_playermodels/combine_hlalyx_soldier_redone.mdl", "player")
-ix.anim.SetModelClass("models/combine_soldiers_redone_playermodels/combine_soldier_prisonguard_redone.mdl", "player")
-ix.anim.SetModelClass("models/combine_soldiers_redone_playermodels/combine_soldier_redone.mdl", "player")
-
-ix.anim.SetModelClass("models/cultist/hl_a/combine_grunt/npc/combine_grunt.mdl", "overwatch")
-ix.anim.SetModelClass("models/cultist/hl_a/combine_heavy/npc/combine_heavy_trooper.mdl", "overwatch")
-ix.anim.SetModelClass("models/cultist/hl_a/combine_suppresor/npc/combine_suppresor.mdl", "overwatch")
-ix.anim.SetModelClass("models/cultist/hl_a/combine_commander/npc/combine_commander.mdl", "overwatch")
-
-ix.anim.SetModelClass("models/captain/hl_a/combine_commander/npc/combine_commander.mdl", "overwatch")
-
-ix.anim.SetModelClass("models/ninja/combine/combine_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/ninja/combine/combine_soldier_prisonguard.mdl", "overwatch")
-ix.anim.SetModelClass("models/ninja/combine/combine_super_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/ninja/combine/combinonew.mdl", "overwatch")
-
-ix.anim.SetModelClass("models/combine_super_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/combine_soldier_prisonguard.mdl", "overwatch")
-ix.anim.SetModelClass("models/combine_soldier.mdl", "overwatch")
-
-ix.anim.SetModelClass("models/hla/combine/combine_hla_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/hla/combine/combine_soldier_prisonguard.mdl", "overwatch")
-ix.anim.SetModelClass("models/hla/combine/combine_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/hla/combine/combine_super_soldier.mdl", "overwatch")
-ix.anim.SetModelClass("models/hla/combine/combine_heavy.mdl", "overwatch")
+ix.anim.SetModelClass("models/synapse/vortigaunt.mdl", "vortigaunt")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male01.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male02.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male03.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male04.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male05.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male06.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male07.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male08.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male09.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/male10.mdl", "citizen_male")
+ix.anim.SetModelClass("models/willardnetworks/citizens/female_01.mdl", "citizen_female")
+ix.anim.SetModelClass("models/willardnetworks/citizens/female_02.mdl", "citizen_female")
+ix.anim.SetModelClass("models/willardnetworks/citizens/female_03.mdl", "citizen_female")
+ix.anim.SetModelClass("models/willardnetworks/citizens/female_04.mdl", "citizen_female")
+ix.anim.SetModelClass("models/willardnetworks/citizens/female_06.mdl", "citizen_female")
+ix.anim.SetModelClass("models/willardnetworks/citizens/female_07.mdl", "citizen_female")
+ix.anim.SetModelClass("models/skipp/snipers/combine_urban_sniper_cloakless.mdl", "overwatch")
+ix.anim.SetModelClass("models/skipp/snipers/combine_urban_sniper.mdl", "overwatch")
+ix.anim.SetModelClass("models/echo/hla/advisor_pm.mdl", "player")
 
 if ( SERVER ) then
     util.AddNetworkString("ixSequenceSet")

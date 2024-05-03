@@ -196,8 +196,8 @@ if ( SERVER ) then
 
         if ( self:GetToggle() and self:GetNetVar("light") ) then
             if ( !self.Beep or CurTime() >= self.Beep ) then
-                self:EmitSound("catalyst/forcefield/forcefield_online.mp3")
-                self:GetDummy():EmitSound("catalyst/forcefield/forcefield_online.mp3")
+                self:EmitSound("interlock/entities/scanner_access_denied.wav")
+                self:GetDummy():EmitSound("interlock/entities/scanner_access_denied.wav")
                 self.Beep = CurTime() + 2
             end
 
